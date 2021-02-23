@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+html {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 1.3rem;
+}
+
+.tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: $color-primary;
+}
+
+main h1 {
+    color : $color-primary;
+    font-size: 2.25rem;
+    line-height: 50px;
+}
+
+.index-profile {
+    h2 { 
+        color: $color-secondary;
+        font-size: 2.25rem;
+    }
+    .loc { 
+        color: $color-primary;
+        font-size: 0.8125rem;
+    }
+    .tagline { 
+        color: $color-black;
+        font-size: 0.625rem;
+    }
+    .price { 
+        color: #757575;
+        font-size: 0.5625rem;
+    }
+}
+
+.page-profile {
+    h1 { 
+        color: $color-secondary;
+        font-size: 4rem;
+    }
+    .loc { 
+        color: $color-primary;
+        font-size: 1.5rem;    
+    }
+    .tagline { 
+        color : $color-grey;
+        font-size: 1.125rem;    
+    }
+    .price { 
+        color: $color-black;
+        font-size: 1.5rem;
+    }
+    .tag { 
+        font-size: 1.125rem;    
+    }
+}
+
+.carrousel-images {
+    .tri {
+        color: $color-black;
+        font-size: 1.125rem;
+        font-weight: 700;
+        &_selector {
+            color: $color-white;
+        }
+    }
+    .img {
+        color: $color-primary;
+        font-size: 1.5rem;
+        &-price {
+            font-weight: 500;
+        }
+    }
+}

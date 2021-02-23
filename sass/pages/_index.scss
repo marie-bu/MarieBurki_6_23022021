@@ -1,0 +1,10 @@
+main h1 {
+    position: absolute;
+    top : 45px ; right : 50px;
+    text-align: center;
+    @include mobile {
+        right: 20px;
+        font-size: 0.875rem;
+        line-height: 37.5px;
+    }
+}

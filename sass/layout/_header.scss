@@ -1,0 +1,44 @@
+.banner {
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+        justify-content: center;
+        flex-direction: column;
+    }
+    img {
+        height: 50px;
+        width: 200px;
+        @include mobile {
+            height: 37.5px;
+            width: 150px;
+        }
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 16px 0 11px 0;
+        margin: 0 60px;
+        button {
+            margin: 0 2px 5px 2px;
+        }
+    }
+    .empty {
+        min-width: 318px;
+    }
+}
+
+.appear-when-scroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    &-link {
+        text-align: center;
+        line-height: 30px;
+        @include btn-static(182px,30px);
+        &:hover, &:focus {
+            @include btn-dynamic;
+        }
+    }
+}

@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+html {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  line-height: 1.3;
+}
+
+*a:link, *a:visited, *a:hover, *a:focus, *a:active {
+  display: block;
+  text-decoration: none;
+}
+
+#retour-nav {
+  color: #000000;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #901C1C;
+}
+
+main h1 {
+  color: #901C1C;
+  font-size: 2.25rem;
+}
+
+.index-profile h2 {
+  color: #D3573C;
+  font-size: 2.25rem;
+}
+
+.index-profile .loc {
+  color: #901C1C;
+  font-size: 0.8125rem;
+}
+
+.index-profile .tagline {
+  color: #000000;
+  font-size: 0.625rem;
+}
+
+.index-profile .price {
+  color: #757575;
+  font-size: 0.5625rem;
+}
+
+.page-profile h1 {
+  color: #D3573C;
+  font-size: 4rem;
+}
+
+.page-profile .loc {
+  color: #901C1C;
+  font-size: 1.5rem;
+}
+
+.page-profile .tagline {
+  color: #525252;
+  font-size: 1.125rem;
+}
+
+.page-profile .price {
+  color: #000000;
+  font-size: 1.5rem;
+}
+
+.page-profile .tag {
+  font-size: 1.125rem;
+}
+
+.page-profile .contact {
+  color: #FFFFFF;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.carrousel-images .tri {
+  color: #000000;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.carrousel-images .tri_selector {
+  color: #FFFFFF;
+}
+
+.carrousel-images .img {
+  color: #901C1C;
+  font-size: 1.5rem;
+}
+
+.carrousel-images .img-price {
+  font-weight: 500;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: none;
+  padding: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header.img {
+  height: 50px;
+  width: 200px;
+}
+
+.appear-when-scroll {
+  display: none;
+  width: 182px;
+  height: 30px;
+  background-color: #901C1C;
+  color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.appear-when-scroll:hover, .appear-when-scroll:focus {
+  background-color: #DB8876;
+  color: #000000;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+html {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  line-height: 1.3rem;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #901C1C;
+}
+
+main h1 {
+  color: #901C1C;
+  font-size: 2.25rem;
+  line-height: 50px;
+}
+
+.index-profile h2 {
+  color: #D3573C;
+  font-size: 2.25rem;
+}
+.index-profile .loc {
+  color: #901C1C;
+  font-size: 0.8125rem;
+}
+.index-profile .tagline {
+  color: #000000;
+  font-size: 0.625rem;
+}
+.index-profile .price {
+  color: #757575;
+  font-size: 0.5625rem;
+}
+
+.page-profile h1 {
+  color: #D3573C;
+  font-size: 4rem;
+}
+.page-profile .loc {
+  color: #901C1C;
+  font-size: 1.5rem;
+}
+.page-profile .tagline {
+  color: #525252;
+  font-size: 1.125rem;
+}
+.page-profile .price {
+  color: #000000;
+  font-size: 1.5rem;
+}
+.page-profile .tag {
+  font-size: 1.125rem;
+}
+
+.carrousel-images .tri {
+  color: #000000;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.carrousel-images .tri_selector {
+  color: #FFFFFF;
+}
+.carrousel-images .img {
+  color: #901C1C;
+  font-size: 1.5rem;
+}
+.carrousel-images .img-price {
+  font-weight: 500;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* a:link, * a:visited, * a:hover, * a:focus, * a:active {
+  display: block;
+  text-decoration: none;
+}
+
+html {
+  margin: 0 50px;
+}
+@media all and (max-width: 899px) {
+  html {
+    margin: 0 20px;
+  }
+}
+
+.tag {
+  padding: 3px 5px;
+  background-color: #FFFFFF;
+  border: 0.5px solid #c5c5c5;
+  border-radius: 11px;
+}
+.tag:hover, .tag:focus {
+  background-color: #901C1C;
+  color: #FFFFFF;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+}
+@media all and (max-width: 899px) {
+  .banner {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+.banner img {
+  height: 50px;
+  width: 200px;
+}
+@media all and (max-width: 899px) {
+  .banner img {
+    height: 37.5px;
+    width: 150px;
+  }
+}
+.banner nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 16px 0 11px 0;
+  margin: 0 60px;
+}
+.banner nav button {
+  margin: 0 2px 5px 2px;
+}
+.banner .empty {
+  min-width: 318px;
+}
+
+.appear-when-scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+}
+.appear-when-scroll-link {
+  text-align: center;
+  line-height: 30px;
+  width: 182px;
+  height: 30px;
+  background-color: #901C1C;
+  color: #FFFFFF;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.appear-when-scroll-link:hover, .appear-when-scroll-link:focus {
+  background-color: #DB8876;
+  color: #000000;
+}
+
+main h1 {
+  position: absolute;
+  top: 45px;
+  right: 50px;
+  text-align: center;
+}
+@media all and (max-width: 899px) {
+  main h1 {
+    right: 20px;
+    font-size: 0.875rem;
+    line-height: 37.5px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

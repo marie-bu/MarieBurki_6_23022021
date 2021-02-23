@@ -1,0 +1,6 @@
+.tag {
+    @include tag-static ;
+    &:hover, &:focus {
+        @include tag-dynamic;
+    }
+}
