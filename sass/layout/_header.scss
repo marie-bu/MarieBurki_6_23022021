@@ -5,6 +5,9 @@
         justify-content: center;
         flex-direction: column;
     }
+    &-photographe {
+        margin-top: 45px;
+    }
     img {
         height: 50px;
         width: 200px;
@@ -25,20 +28,5 @@
     }
     .empty {
         min-width: 318px;
-    }
-}
-
-.appear-when-scroll {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 45px;
-    &-link {
-        text-align: center;
-        line-height: 30px;
-        @include btn-static(182px,30px);
-        &:hover, &:focus {
-            @include btn-dynamic;
-        }
     }
 }

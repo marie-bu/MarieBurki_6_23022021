@@ -1,0 +1,47 @@
+.profile {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 313px;
+    padding: 55px 45px;
+    background-color: $color-lightgrey;
+    &-info {
+        display: flex;
+        width : fit-content;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-right: 40px;
+        &-tags {
+            display: flex;
+            flex-wrap: wrap;
+            .tag {
+                display: inline;
+                margin : 10px 5px 0 0;
+                @include tag-static
+            }
+        }
+        &-bottom {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            min-width: 375px;
+            bottom: 0vh; right: 0vw;
+            padding : 20px 30px ;
+            background-color: $color-btn-dynamic;
+            border-radius: 5px 5px 0 0;
+        }
+    }
+    &-contact {
+        display: flex;
+        flex: 3;
+    }
+    &-portrait {
+        display: flex;
+        width: 200px;
+        justify-content: center;
+        align-items: center;
+        img {
+            @include portrait-img (0px);
+        }
+    }
+}

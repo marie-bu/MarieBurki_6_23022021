@@ -1,6 +1,13 @@
 .tag {
     @include tag-static ;
-    &:hover, &:focus {
+    &-btn:hover, &-btn:focus, &-btn:active{
         @include tag-dynamic;
+    }
+}
+
+.btn {
+    @include btn-static;
+    &:hover, &:focus {
+        @include btn-dynamic;
     }
 }

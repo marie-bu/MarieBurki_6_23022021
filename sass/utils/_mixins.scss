@@ -1,3 +1,11 @@
+@mixin portrait-img ($margin:20px){
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin : $margin;
+}
+
 @mixin tag-static {
     padding: 3px 5px;
     background-color: $color-white;
@@ -10,11 +18,12 @@
     color: $color-white;
 }
 
-@mixin btn-static ($width:170px, $height:69px){
+@mixin btn-static ($width:170px, $height:69px) {
     width: $width;
     height: $height;
     background-color: $color-primary;
     color: $color-white;
+    border: none;
     font-size: 1.125rem;
     font-weight: 700;
     border-radius: 5px;

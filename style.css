@@ -3,7 +3,6 @@ html {
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
   font-size: 100%;
-  line-height: 1.3rem;
 }
 
 .tag {
@@ -21,37 +20,45 @@ main h1 {
 .index-profile h2 {
   color: #D3573C;
   font-size: 2.25rem;
+  text-align: center;
 }
-.index-profile .loc {
+.index-profile .location {
   color: #901C1C;
   font-size: 0.8125rem;
+  text-align: center;
 }
 .index-profile .tagline {
   color: #000000;
   font-size: 0.625rem;
+  text-align: center;
 }
 .index-profile .price {
   color: #757575;
   font-size: 0.5625rem;
+  text-align: center;
 }
 
-.page-profile h1 {
+.profile-info-name {
   color: #D3573C;
   font-size: 4rem;
 }
-.page-profile .loc {
+.profile-info-loc {
   color: #901C1C;
   font-size: 1.5rem;
 }
-.page-profile .tagline {
+.profile-info-tagline {
   color: #525252;
   font-size: 1.125rem;
 }
-.page-profile .price {
+.profile-info-bottom {
   color: #000000;
   font-size: 1.5rem;
+  font-weight: 500;
 }
-.page-profile .tag {
+.profile-info-bottom i {
+  font-size: 1.35rem;
+}
+.profile-tag {
   font-size: 1.125rem;
 }
 
@@ -84,11 +91,15 @@ main h1 {
   text-decoration: none;
 }
 
-html {
+ul {
+  list-style-type: none;
+}
+
+body {
   margin: 0 50px;
 }
 @media all and (max-width: 899px) {
-  html {
+  body {
     margin: 0 20px;
   }
 }
@@ -99,9 +110,24 @@ html {
   border: 0.5px solid #c5c5c5;
   border-radius: 11px;
 }
-.tag:hover, .tag:focus {
+.tag-btn:hover, .tag-btn:focus, .tag-btn:active {
   background-color: #901C1C;
   color: #FFFFFF;
+}
+
+.btn {
+  width: 170px;
+  height: 69px;
+  background-color: #901C1C;
+  color: #FFFFFF;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.btn:hover, .btn:focus {
+  background-color: #DB8876;
+  color: #000000;
 }
 
 .banner {
@@ -113,6 +139,9 @@ html {
     justify-content: center;
     flex-direction: column;
   }
+}
+.banner-photographe {
+  margin-top: 45px;
 }
 .banner img {
   height: 50px;
@@ -138,11 +167,125 @@ html {
   min-width: 318px;
 }
 
+.index {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 25%);
+  justify-content: space-between;
+  gap: 30px 100px;
+  margin: 70px 0;
+}
+@media all and (max-width: 899px) {
+  .index {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+}
+.index-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.index-profile a {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.index-profile a img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 20px;
+}
+.index-profile p {
+  margin: 5px 0;
+}
+.index-profile p:last-child {
+  margin: -2px 0;
+}
+.index-profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.index-profile-tags .tag {
+  display: inline;
+  margin: 10px 5px 0 0;
+  padding: 3px 5px;
+  background-color: #FFFFFF;
+  border: 0.5px solid #c5c5c5;
+  border-radius: 11px;
+}
+.index .hide {
+  display: none;
+}
+
+.profile {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 313px;
+  padding: 55px 45px;
+  background-color: #FAFAFA;
+}
+.profile-info {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 40px;
+}
+.profile-info-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.profile-info-tags .tag {
+  display: inline;
+  margin: 10px 5px 0 0;
+  padding: 3px 5px;
+  background-color: #FFFFFF;
+  border: 0.5px solid #c5c5c5;
+  border-radius: 11px;
+}
+.profile-info-bottom {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  min-width: 375px;
+  bottom: 0vh;
+  right: 0vw;
+  padding: 20px 30px;
+  background-color: #DB8876;
+  border-radius: 5px 5px 0 0;
+}
+.profile-contact {
+  display: flex;
+  flex: 3;
+}
+.profile-portrait {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+.profile-portrait img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0px;
+}
+
 .appear-when-scroll {
+  position: sticky;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 45px;
+  background-color: #FFFFFF;
+  opacity: 0;
+  transition: 200ms;
 }
 .appear-when-scroll-link {
   text-align: center;
@@ -151,6 +294,7 @@ html {
   height: 30px;
   background-color: #901C1C;
   color: #FFFFFF;
+  border: none;
   font-size: 1.125rem;
   font-weight: 700;
   border-radius: 5px;
@@ -160,14 +304,14 @@ html {
   color: #000000;
 }
 
-main h1 {
+.photographes h1 {
   position: absolute;
   top: 45px;
   right: 50px;
   text-align: center;
 }
 @media all and (max-width: 899px) {
-  main h1 {
+  .photographes h1 {
     right: 20px;
     font-size: 0.875rem;
     line-height: 37.5px;

@@ -4,7 +4,6 @@ html {
     font-family: 'DM Sans', sans-serif;
     font-weight: 400;
     font-size: 100%;
-    line-height: 1.3rem;
 }
 
 .tag {
@@ -23,39 +22,49 @@ main h1 {
     h2 { 
         color: $color-secondary;
         font-size: 2.25rem;
+        text-align: center;
     }
-    .loc { 
+    .location { 
         color: $color-primary;
         font-size: 0.8125rem;
+        text-align: center;
     }
     .tagline { 
         color: $color-black;
         font-size: 0.625rem;
+        text-align: center;
     }
     .price { 
         color: #757575;
         font-size: 0.5625rem;
+        text-align: center;
     }
 }
 
-.page-profile {
-    h1 { 
-        color: $color-secondary;
-        font-size: 4rem;
+.profile {
+    &-info {
+        &-name { 
+            color: $color-secondary;
+            font-size: 4rem;
+        }
+        &-loc { 
+            color: $color-primary;
+            font-size: 1.5rem;    
+        }
+        &-tagline { 
+            color : $color-grey;
+            font-size: 1.125rem;    
+        }
+        &-bottom {
+            color: $color-black;
+            font-size: 1.5rem;
+            font-weight: 500;
+            i {
+                font-size: 1.35rem;
+            }
+        }
     }
-    .loc { 
-        color: $color-primary;
-        font-size: 1.5rem;    
-    }
-    .tagline { 
-        color : $color-grey;
-        font-size: 1.125rem;    
-    }
-    .price { 
-        color: $color-black;
-        font-size: 1.5rem;
-    }
-    .tag { 
+    &-tag { 
         font-size: 1.125rem;    
     }
 }

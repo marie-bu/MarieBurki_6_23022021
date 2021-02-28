@@ -1,4 +1,24 @@
-main h1 {
+.appear-when-scroll {
+    position: sticky;
+    top : 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    background-color: $color-white;
+    opacity: 0;
+    transition: 200ms;
+    &-link {
+        text-align: center;
+        line-height: 30px;
+        @include btn-static(182px,30px);
+        &:hover, &:focus {
+            @include btn-dynamic;
+        }
+    }
+}
+
+.photographes h1 {
     position: absolute;
     top : 45px ; right : 50px;
     text-align: center;

@@ -5,122 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
     <title>FishEye, plateforme de photographes</title>
 </head>
 <body>
+    <div class="appear-when-scroll" role="link" aria-label="revenir en haut de page"><a href="#retour-contenu" class="appear-when-scroll-link">Passer au contenu</a></div>
     <header>
-        <div class="appear-when-scroll"><a href="#retour-nav" class="appear-when-scroll-link">Passer au contenu</a></div>
-        <div class="banner">
-            <a href="index.html" class="logo-link"><img src=".logo.png" alt="FishEye Home page" aria-label="Fisheye logo"></a>
-            <nav id="retour-nav">
-                <button class="tag" onclick="filterSelection('portrait')">#Portrait</button>
-                <button class="tag" onclick="filterSelection('art')">#Art</button>
-                <button class="tag" onclick="filterSelection('fashion')">#Fashion</button>
-                <button class="tag" onclick="filterSelection('architecture')">#Architecture</button>
-                <button class="tag" onclick="filterSelection('travel')">#Travel</button>
-                <button class="tag" onclick="filterSelection('sport')">#Sport</button>
-                <button class="tag" onclick="filterSelection('animals')">#Animals</button>
-                <button class="tag" onclick="filterSelection('events')">#Events</button>
+        <div class="banner" role="banner">
+            <a href="index.html" class="logo-link" role="img link"><img src=".logo.png" alt="FishEye Home page" aria-label="logo Fisheye"></a>
+            <nav role="navigation">
+                <button class="tag tag-btn" role="link" aria-label="selectionner photographes spécialisés en" onclick="filterSelection('portrait')">#Portrait</button>
+                <button class="tag tag-btn" role="link" aria-label="selectionner photographes spécialisés en" onclick="filterSelection('art')">#Art</button>
+                <button class="tag tag-btn" role="link" aria-label="selectionner photographes spécialisés en" onclick="filterSelection('fashion')">#Fashion</button>
+                <button class="tag tag-btn" role="link" aria-label="selectionner photographes spécialisés en" onclick="filterSelection('architecture')">#Architecture</button>
+                <button class="tag tag-btn" role="link" aria-label="selectionner photographes spécialisés en" onclick="filterSelection('travel')">#Travel</button>
+                <button class="tag tag-btn" role="link" aria-label="selectionner photographes spécialisés en" onclick="filterSelection('sport')">#Sport</button>
+                <button class="tag tag-btn" role="link" aria-label="selectionner photographes spécialisés en" onclick="filterSelection('animals')">#Animals</button>
+                <button class="tag tag-btn" role="link" aria-label="selectionner photographes spécialisés en" onclick="filterSelection('events')">#Events</button>
             </nav>
             <div class="empty"></div>
         </div>
     </header>
 
-    <main>
-        <section>
-            <h1>Nos photographes</h1>
-            <ul>
-                <li class="index-profile">
-                    
-            </li>
-                <!--<li>
-                    <div><a href="">
-                        <h2 class="name"></h2>
-                        <img class="portrait" src="" alt="">
-                    </a></div>
-                    <div>
-                        <p class="location"></p>
-                        <p class="tagline"></p>
-                        <p class="price"></p>
-                    </div>
-                    <div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                    </div>
-                </li>
-                <li>
-                    <div><a href="">
-                        <h2 class="name"></h2>
-                        <img class="portrait" src="" alt="">
-                    </a></div>
-                    <div>
-                        <p class="location"></p>
-                        <p class="tagline"></p>
-                        <p class="price"></p>
-                    </div>
-                    <div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                    </div>
-                </li>
-                <li>
-                    <div><a href="">
-                        <h2 class="name"></h2>
-                        <img class="portrait" src="" alt="">
-                    </a></div>
-                    <div>
-                        <p class="location"></p>
-                        <p class="tagline"></p>
-                        <p class="price"></p>
-                    </div>
-                    <div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                    </div>
-                </li>
-                <li>
-                    <div><a href="">
-                        <h2 class="name"></h2>
-                        <img class="portrait" src="" alt="">
-                    </a></div>
-                    <div>
-                        <p class="location"></p>
-                        <p class="tagline"></p>
-                        <p class="price"></p>
-                    </div>
-                    <div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                    </div>
-                </li>
-                <li>
-                    <div><a href="">
-                        <h2 class="name"></h2>
-                        <img class="portrait" src="" alt="">
-                    </a></div>
-                    <div>
-                        <p class="location"></p>
-                        <p class="tagline"></p>
-                        <p class="price"></p>
-                    </div>
-                    <div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                        <div class="tag"></div>
-                    </div>
-                </li>-->
-            </ul>
+    <main id="retour-contenu">
+        <section class="photographes">
+            <h1 role="heading">Nos photographes</h1>
         </section>
     </main>
-<script src="app.js"></script> 
 </body>
 </html
