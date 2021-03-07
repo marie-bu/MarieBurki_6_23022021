@@ -21,7 +21,7 @@ function appendDataIndex(data) {
 
     for (let i = 0; i < data.photographers.length; i++) {
       index.innerHTML += `<li class="index-profile">
-        <div role="link img" aria-label="aller sur le profile du photographe"><a href="">
+        <div role="link img" aria-label="aller sur le profile du photographe"><a href="photographer_profile.html">
             <h2 class="name">`+data.photographers[i].name+`</h2>
             <img class="portrait" src="FishEye_Photos/Photographers_ID/`+data.photographers[i].portrait+`" alt="">
         </a></div>

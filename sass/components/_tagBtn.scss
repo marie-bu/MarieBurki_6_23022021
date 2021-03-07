@@ -11,3 +11,17 @@
         @include btn-dynamic;
     }
 }
+
+.close{
+    background-color: $color-btn-dynamic;
+    border: none;
+    position: absolute;
+    top: 35px; right: 35px;
+    cursor: pointer;
+    &-lightbox {
+        background-color: $color-white;
+        i {
+            color: $color-primary;
+        }
+    }
+}

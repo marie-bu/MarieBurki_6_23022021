@@ -12,7 +12,7 @@ html {
     color: $color-primary;
 }
 
-main h1 {
+.photographes-titre {
     color : $color-primary;
     font-size: 2.25rem;
     line-height: 50px;
@@ -46,14 +46,32 @@ main h1 {
         &-name { 
             color: $color-secondary;
             font-size: 4rem;
+            font-weight: 300;
+            @include mobile {
+                font-size: 2.25rem;
+            }
         }
         &-loc { 
             color: $color-primary;
-            font-size: 1.5rem;    
+            font-size: 1.5rem;
+            @include mobile {
+                font-size: 0.8125rem;
+            }    
         }
         &-tagline { 
             color : $color-grey;
-            font-size: 1.125rem;    
+            font-size: 1.125rem;
+            @include mobile {
+                font-size: 0.8125rem;
+            }     
+        }
+        &-tags { 
+            .tag{
+                font-size: 1.125rem;  
+                @include mobile {
+                    font-size: 0.8125rem;
+                }    
+            }  
         }
         &-bottom {
             color: $color-black;
@@ -64,25 +82,41 @@ main h1 {
             }
         }
     }
-    &-tag { 
-        font-size: 1.125rem;    
+}
+
+.modal-contact {
+    h1 {
+        font-size: 4rem;
+        font-weight: 300;
+        line-height: 110%;
+        @include mobile {
+            font-size: 2.25rem;
+        }
+
+    }
+    label, input {
+        font-size: 2.25rem;
+    }
+    i {
+        color: $color-white;
+        font-size: 3rem;
     }
 }
 
-.carrousel-images {
-    .tri {
+.pictures {
+    label {
         color: $color-black;
         font-size: 1.125rem;
         font-weight: 700;
-        &_selector {
+        &-selector {
             color: $color-white;
         }
     }
-    .img {
+    &-item-info {
         color: $color-primary;
         font-size: 1.5rem;
-        &-price {
-            font-weight: 500;
+        @include mobile {
+            font-size: 0.875rem;
         }
     }
 }

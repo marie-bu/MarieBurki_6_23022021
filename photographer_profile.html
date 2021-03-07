@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/4ff3d07870.js" crossorigin="anonymous"></script>
+    <script src="app-photographe.js" defer></script>
+    <title>Possible d'adapter au contenu, selon js?</title>
+</head>
+<body>
+    <header>
+        <div class="banner banner-photographe" role="banner">
+            <a href="index.html" class="logo-link" role="img"><img src=".logo.png" alt="FishEye Home page" aria-label="logo Fisheye"></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="profile">
+        </section>
+
+        <section class="bg modal-bg">
+            <div class="modal-contact" role="dialog">
+                <button class="close" role="button" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
+                <h1 class="modal-heading" role="heading"></h1>
+                <form action="" method="post" role="form" onsubmit="closeContactModal()">
+                    <label for="first">Prénom</label>
+                    <input type="text" name="first-name" id="first" role="textbox" required>
+
+                    <label for="last">Nom</label>
+                    <input type="text" name="last-name" id="last" role="textbox" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" role="textbox" required>
+
+                    <label for="message">Votre message</label>
+                    <input type="text" name="your-message" id="message" role="textbox" required>
+
+                    <input type="submit" class="btn" value="Envoyer" role="button">
+                </form>    
+            </div>
+        </section>
+
+        <section class="pictures">
+            <label for="tri">Trier par</label>
+            <select name="tri" id="tri">
+                <option id="popularity">Popularité</option>
+                <option id="date">Date</option>
+                <option id="title">Titre</option>
+            </select>
+
+            <ul class="pic-grid"></ul>
+
+            <div class="bg lightbox-bg">
+                <div class="lightbox-content">
+                    <button class="close close-lighbox" role="button" onclick="closeLighbox()"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

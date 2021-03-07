@@ -1,0 +1,16 @@
+select {
+    appearance: none;
+    border: none;
+    @include btn-static;
+    padding-left : 20px;
+    margin-left: 25px;
+}
+
+.pictures {
+    label, select {
+        @include mobile {
+            display: none;
+        }
+    }
+}
+

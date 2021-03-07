@@ -1,16 +1,26 @@
 .profile {
-    position: relative;
     display: flex;
     justify-content: space-between;
     height: 313px;
     padding: 55px 45px;
+    margin: 40px 0 20px 0;
     background-color: $color-lightgrey;
+    @include mobile {
+        height: auto;
+        padding: 0 0;
+        margin: 30px 0 45px 0;
+        background-color: $color-white;
+    }
     &-info {
         display: flex;
         width : fit-content;
         flex-direction: column;
         justify-content: space-between;
         padding-right: 40px;
+        @include mobile {
+            padding-right: 0px;
+            margin-right: -40px;
+        }
         &-tags {
             display: flex;
             flex-wrap: wrap;
@@ -21,27 +31,44 @@
             }
         }
         &-bottom {
-            position: absolute;
+            position: fixed;
             display: flex;
             justify-content: space-between;
             min-width: 375px;
-            bottom: 0vh; right: 0vw;
+            bottom: 0vh; right: 50px;
             padding : 20px 30px ;
             background-color: $color-btn-dynamic;
             border-radius: 5px 5px 0 0;
+            @include mobile {
+                display: none;
+            }
         }
     }
     &-contact {
         display: flex;
         flex: 3;
+        @include mobile {
+            position: fixed;
+            bottom: 40px; left: 50%;
+            width: 170px; height: 35px;
+            margin-left: -85px;
+        }
     }
     &-portrait {
         display: flex;
         width: 200px;
         justify-content: center;
         align-items: center;
+        @include mobile {
+            width: 100px;
+            align-items: flex-start;
+        }
         img {
             @include portrait-img (0px);
+            @include mobile {
+                width: 100px;
+                height: 100px;
+            }
         }
     }
 }

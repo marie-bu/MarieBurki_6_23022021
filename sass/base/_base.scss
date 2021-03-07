@@ -15,9 +15,12 @@ ul {
     list-style-type: none;
 }
 
-body {
-    margin: 0 50px;
+html {
+    position: relative;
+    max-width: 1415px;
+    margin: auto;
+    padding : 0 50px;
     @include mobile {
-        margin : 0 20px;
+        padding : 0 20px;
     }
 }

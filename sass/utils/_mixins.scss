@@ -2,6 +2,7 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
+    box-shadow: inset 15px 15px rgba($color: $color-lightgrey, $alpha: 0.9);
     object-fit: cover;
     margin : $margin;
 }
@@ -16,9 +17,10 @@
 @mixin tag-dynamic {
     background-color: $color-primary;
     color: $color-white;
+    cursor: pointer;
 }
 
-@mixin btn-static ($width:170px, $height:69px) {
+@mixin btn-static ($width:170px, $height:69px, $radius:5px) {
     width: $width;
     height: $height;
     background-color: $color-primary;
@@ -26,12 +28,13 @@
     border: none;
     font-size: 1.125rem;
     font-weight: 700;
-    border-radius: 5px;
+    border-radius: $radius;
 }
 
 @mixin btn-dynamic {
     background-color: $color-btn-dynamic;
     color: $color-black;
+    cursor: pointer;
 }
 
 @mixin mobile {
