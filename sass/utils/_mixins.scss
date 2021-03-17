@@ -2,9 +2,8 @@
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    box-shadow: inset 15px 15px rgba($color: $color-lightgrey, $alpha: 0.9);
     object-fit: cover;
-    margin : $margin;
+    margin: $margin;
 }
 
 @mixin tag-static {

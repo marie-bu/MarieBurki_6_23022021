@@ -1,12 +1,12 @@
 .profile {
     display: flex;
     justify-content: space-between;
-    height: 313px;
+    min-height: 313px;
     padding: 55px 45px;
     margin: 40px 0 20px 0;
     background-color: $color-lightgrey;
     @include mobile {
-        height: auto;
+        min-height: auto;
         padding: 0 0;
         margin: 30px 0 45px 0;
         background-color: $color-white;
@@ -47,6 +47,7 @@
     &-contact {
         display: flex;
         flex: 3;
+        padding-right: 60px;
         @include mobile {
             position: fixed;
             bottom: 40px; left: 50%;
@@ -64,7 +65,7 @@
             align-items: flex-start;
         }
         img {
-            @include portrait-img (0px);
+            @include portrait-img(0px);
             @include mobile {
                 width: 100px;
                 height: 100px;

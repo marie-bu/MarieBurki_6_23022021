@@ -3,14 +3,17 @@
     position: fixed;
     top: 0; left: 0;
     z-index: 1;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: rgba($color: #c4c4c4, $alpha: 0.4);
 }
 
 .modal-contact {
     position: absolute;
     width: 700px;
+    height: 80vh;
+    max-height: 900px;
+    overflow: scroll;
     left: 50%;
     margin-left: -350px;
     margin-top: 75px;

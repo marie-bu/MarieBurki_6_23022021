@@ -101,12 +101,12 @@ html {
   font-size: 3rem;
 }
 
-.pictures label {
+.pictures .pic-sort-title {
   color: #000000;
   font-size: 1.125rem;
   font-weight: 700;
 }
-.pictures label-selector {
+.pictures .pic-sort-title-selector {
   color: #FFFFFF;
 }
 .pictures-item-info {
@@ -146,6 +146,15 @@ html {
   html {
     padding: 0 20px;
   }
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .tag {
@@ -191,6 +200,72 @@ html {
   color: #901C1C;
 }
 
+.pic-sort {
+  display: flex;
+  flex-direction: row;
+  padding-top: 15px;
+}
+.pic-sort-buttons {
+  position: absolute;
+  left: 150px;
+  z-index: 1;
+  margin-left: 15px;
+  margin-top: -18px;
+  display: flex;
+  flex-direction: column;
+  background-color: #901C1C;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px #525252;
+}
+.pic-sort-buttons .arrow {
+  position: absolute;
+  top: 25px;
+  right: 18px;
+  color: #FFFFFF;
+}
+.pic-sort-buttons .rollup-select {
+  display: none;
+}
+.pic-sort-buttons button {
+  text-align: left;
+  padding-left: 20px;
+  width: 170px;
+  height: 69px;
+  background-color: #901C1C;
+  color: #FFFFFF;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 5px;
+}
+.pic-sort-buttons button:hover {
+  font-size: 1.2rem;
+}
+.pic-sort-buttons button:focus {
+  color: #DB8876;
+}
+.pic-sort-buttons .line-separate {
+  align-self: center;
+  height: 1px;
+  width: 150px;
+  background-color: #FFFFFF;
+}
+.pic-sort-buttons .date, .pic-sort-buttons .title, .pic-sort-buttons .line-separate {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.pic-sort-buttons .show {
+  position: relative;
+  top: auto;
+  z-index: 0;
+}
+@media all and (max-width: 899px) {
+  .pic-sort {
+    display: none;
+  }
+}
+
 .banner {
   display: flex;
   justify-content: space-between;
@@ -230,7 +305,7 @@ html {
 
 .index {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 25%);
+  grid-template-columns: repeat(auto-fill, 27%);
   justify-content: space-between;
   gap: 30px 100px;
   margin: 70px 0;
@@ -255,7 +330,6 @@ html {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  box-shadow: inset 15px 15px rgba(250, 250, 250, 0.9);
   object-fit: cover;
   margin: 20px;
 }
@@ -285,14 +359,14 @@ html {
 .profile {
   display: flex;
   justify-content: space-between;
-  height: 313px;
+  min-height: 313px;
   padding: 55px 45px;
   margin: 40px 0 20px 0;
   background-color: #FAFAFA;
 }
 @media all and (max-width: 899px) {
   .profile {
-    height: auto;
+    min-height: auto;
     padding: 0 0;
     margin: 30px 0 45px 0;
     background-color: #FFFFFF;
@@ -342,6 +416,7 @@ html {
 .profile-contact {
   display: flex;
   flex: 3;
+  padding-right: 60px;
 }
 @media all and (max-width: 899px) {
   .profile-contact {
@@ -369,7 +444,6 @@ html {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  box-shadow: inset 15px 15px rgba(250, 250, 250, 0.9);
   object-fit: cover;
   margin: 0px;
 }
@@ -386,14 +460,17 @@ html {
   top: 0;
   left: 0;
   z-index: 1;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: rgba(196, 196, 196, 0.4);
 }
 
 .modal-contact {
   position: absolute;
   width: 700px;
+  height: 80vh;
+  max-height: 900px;
+  overflow: scroll;
   left: 50%;
   margin-left: -350px;
   margin-top: 75px;
@@ -444,9 +521,11 @@ html {
 }
 
 .pic-grid {
+  position: relative;
+  top: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 30px 8%;
   margin-top: 60px;
 }
 @media all and (max-width: 899px) {
@@ -457,7 +536,6 @@ html {
   }
 }
 .pic-grid .pictures-item {
-  margin-bottom: 30px;
   width: 28%;
 }
 @media all and (max-width: 899px) {
@@ -466,7 +544,7 @@ html {
     margin-bottom: 10px;
   }
 }
-.pic-grid .pictures-item img {
+.pic-grid .pictures-item img, .pic-grid .pictures-item video {
   width: 100%;
   height: 300px;
   border-radius: 5px;
@@ -477,8 +555,14 @@ html {
   justify-content: space-between;
   margin-top: 5px;
 }
+.pic-grid .pictures-item-info p {
+  white-space: nowrap;
+}
 .pic-grid .pictures-item-info p:first-child {
   flex: 50%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 }
 .pic-grid .pictures-item-info p:nth-child(2) {
   margin-right: 15px;
@@ -524,27 +608,6 @@ html {
     right: 20px;
     font-size: 0.875rem;
     line-height: 37.5px;
-  }
-}
-
-select {
-  appearance: none;
-  border: none;
-  width: 170px;
-  height: 69px;
-  background-color: #901C1C;
-  color: #FFFFFF;
-  border: none;
-  font-size: 1.125rem;
-  font-weight: 700;
-  border-radius: 5px;
-  padding-left: 20px;
-  margin-left: 25px;
-}
-
-@media all and (max-width: 899px) {
-  .pictures label, .pictures select {
-    display: none;
   }
 }
 

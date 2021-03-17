@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/4ff3d07870.js" crossorigin="anonymous"></script>
     <script src="app-photographe.js" defer></script>
-    <title>Possible d'adapter au contenu, selon js?</title>
+    <title></title>
 </head>
 <body>
     <header>
@@ -43,12 +43,18 @@
         </section>
 
         <section class="pictures">
-            <label for="tri">Trier par</label>
-            <select name="tri" id="tri">
-                <option id="popularity">Popularité</option>
-                <option id="date">Date</option>
-                <option id="title">Titre</option>
-            </select>
+            <div class="pic-sort">
+                <div class="pic-sort-title">Trier par</div>
+                <div class="pic-sort-buttons">
+                    <span class="arrow unroll-select" onclick="unroll()"><i class="fas fa-chevron-down"></i></span>
+                    <span class="arrow rollup-select" onclick="rollup()"><i class="fas fa-chevron-up"></i></span>
+                    <button class="popularity">Popularité</button>
+                    <div class="line-separate"></div>
+                    <button class="date">Date</button>
+                    <div class="line-separate"></div>
+                    <button class="title">Titre</button>
+                </div>
+            </div>
 
             <ul class="pic-grid"></ul>
 
