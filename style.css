@@ -137,7 +137,6 @@ ul {
 }
 
 html {
-  position: relative;
   max-width: 1415px;
   margin: auto;
   padding: 0 50px;
@@ -398,12 +397,12 @@ html {
   border-radius: 11px;
 }
 .profile-info-bottom {
-  position: fixed;
+  position: sticky;
+  bottom: 0;
+  left: 80%;
   display: flex;
   justify-content: space-between;
-  min-width: 375px;
-  bottom: 0vh;
-  right: 50px;
+  max-width: 375px;
   padding: 20px 30px;
   background-color: #DB8876;
   border-radius: 5px 5px 0 0;
@@ -459,21 +458,18 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   height: 100%;
   width: 100%;
+  overflow: auto;
   background-color: rgba(196, 196, 196, 0.4);
 }
 
 .modal-contact {
-  position: absolute;
+  position: relative;
+  overflow: hidden;
   width: 700px;
-  height: 80vh;
-  max-height: 900px;
-  overflow: scroll;
-  left: 50%;
-  margin-left: -350px;
-  margin-top: 75px;
+  margin: 10% auto;
   background-color: #DB8876;
   opacity: 1;
   border-radius: 5px;
@@ -560,6 +556,7 @@ html {
 }
 .pic-grid .pictures-item-info p:first-child {
   flex: 50%;
+  padding-right: 10px;
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
