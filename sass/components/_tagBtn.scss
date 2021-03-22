@@ -19,9 +19,28 @@
     top: 35px; right: 35px;
     cursor: pointer;
     &-lightbox {
+        top: 5px;
         background-color: $color-white;
         i {
             color: $color-primary;
+            font-size: 2.5rem;
         }
+    }
+}
+
+.skip{
+    border: none;
+    position: absolute;
+    top : calc(50% - 20px);
+    cursor: pointer;
+    &-left{
+        left: 35px;
+    }
+    &-right{
+        right: 35px;
+    }
+    i {
+        color: $color-primary;
+        font-size: 2.5rem;
     }
 }

@@ -21,6 +21,7 @@
             height: 300px;
             border-radius: 5px;
             object-fit: cover;
+            cursor: pointer;
         }
         &-info {
             display: flex;
@@ -38,6 +39,9 @@
             }
             p:nth-child(2){
                 margin-right: 15px;
+            }
+            i {
+                cursor: pointer;
             }
         }
     }

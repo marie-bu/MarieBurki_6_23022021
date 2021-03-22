@@ -22,7 +22,7 @@ fetch('https://raw.githubusercontent.com/marie-bu/MarieBurki_6_23022021/main/Fis
 const titlePage = document.querySelector("title");
 
 const profile = document.querySelector(".profile");
-const modalHeading = document.querySelector(".modal-heading");
+const modalHeading = document.querySelector("#modal-heading");
 const modalContact = document.querySelector(".modal-bg");
 const totalLikes = document.querySelector("#total-likes");
 const priceBottom = document.querySelector("#price-bottom");
@@ -36,6 +36,7 @@ const title = document.querySelector(".title");
 
 const picGrid = document.querySelector(".pic-grid");
 const lightbox = document.querySelector(".lightbox-bg");
+const lightboxGallery = document.querySelector(".lightbox-gallery");
 
 // insert data into profile, including contact modal title
 
@@ -69,7 +70,7 @@ function appendDataProfile(data){
           <div class="profile-info-tags" role="link"></div>
         </div>
         <div class="profile-contact">
-          <button class="btn btn-contact" role="button" onclick="openContactModal()">Contactez-moi</button>
+          <button class="btn btn-contact" role="button" aria-label="Contact me" onclick="openContactModal()">Contactez-moi</button>
         </div>
         <div class="profile-portrait">
           <img src="FishEye_Photos/Photographers_ID/`+data.photographers[i].portrait+`" alt="" role="img">
@@ -124,150 +125,58 @@ function rollup() {
   unrollSelect.style.display = "inline-block";
 }
 
-// add titles to medias
-
-/*function addTitle(data) {
-
-  const Titles = [
-    {
-      photographerId: 82,
-      titles: ["Portrait femme sportive",
-      "Portrait femme sur pont",
-      "Portrait mode",
-      "Mariage des Gazebo",
-      "Soirée chez les Sparklers",
-      "Anniversaire",
-      "Sculpture de cheval",
-      "Street-art porte",
-      "Street-art sous-voie",
-      "Street-art mur"]
-    },
-    {
-      photographerId: 195,
-      titles: [ "Temple chinois",
-      "Canal de Venise",
-      "Lac et montagne",
-      "Vélo dans rue française",
-      "Porte ouverte sur paysage",
-      "Dômes orientaux",
-      "Village sur colline",
-      "Tour de Pise",
-      "Croisement de routes",
-      "Haut d'immeuble"
-      ]
-    },
-    {
-      photographerId: 243,
-      titles: [ "Randonneur en montage",
-      "Village sur falaise italienne",
-      "Portrait fillette",
-      "Femme à lunette",
-      "Portrait de femme",
-      "Mariage à la mer",
-      "Mariage des Pinto",
-      "Mariage des Benevides",
-      "Chevaux sauvages",
-      "Oiseau multicolor"
-      ]
-    },
-    {
-      photographerId: 527, 
-      titles: [
-        "Crête de montagne",
-        "Bains chauds naturels",
-        "Route serpente dans les collines",
-        "Pont dans les arbres",
-        "Proue de bateau, lac et montagne",
-        "Portrait femme rousse",
-        "Portrait homme noir",
-        "Portrait femme noire",
-        "Portrait homme à la cigarette"
-      ]
-    },
-    {
-      photographerId: 925,
-      titles: ["Rameurs",
-      "Couple de danseurs",
-      "Portrait mode",
-      "Séance au travail",
-      "Présentation commerciale",
-      "Pianiste en concert",
-      "Chanteuse en concert",
-      "Cerf dans la forêt",
-      "Chiot joue dans le sable"
-      ]
-    },
-    {
-      photographerId: 930,
-      titles: [ "Acrobatie aérienne",
-      "Escalade",
-      "Surfeuse au centre de la vague",
-      "Saut à ski",
-      "Coureuses au stade",
-      "Jeunes skateurs au bord de mer",
-      "Hall blanc et rampe en colimaçon",
-      "Toit ondulé",
-      "Bâtiment en forme de fer à cheval",
-      "Motif de croix entre deux buildings",
-      "Ponts relient deux bâtiments"
-      ]
-    }
-  ];
-
-  const mediaArray = new Array;
-    for (media of data.media) {
-      if (media.photographerId==id) {
-        mediaArray.push(media);
-      }
-    };
-
-  for (j=0; j<mediaArray.length; j++){
-    for (array of Titles){
-      for (i=0; i<array.titles.length; i++){
-        if (array.photographerId==id && j==i){
-          mediaArray[j].title = array.titles[i];
-        }        
-      }
-    }
-  };
-
-};*/
-
 // insert data into grid pictures
 
 function appendDataPic(data) {
 
   picGrid.innerHTML = ``;
 
-  for (media of data.media) {
+  const mediaArray = new Array
+  for (media of data.media){
     if (media.photographerId==id){
+      mediaArray.push(media);
+    }
+  }
 
-      if (media.video) {
+  for (i=0; i<mediaArray.length; i++){
+
+      if (mediaArray[i].video) {
         picGrid.innerHTML += `
-      <li class="pictures-item">
-        <video src="FishEye_Photos/`+media.photographerId+`/`+media.video+`" alt="" onclick="openLightbox()" controls></video>
-        <div class="pictures-item-info">
-          <p>`+media.desc+`</p>
-          <p>`+media.price+` €</p>
-          <p><span id="like-counter-${media.id}">`+media.likes+`</span> <i class="fas fa-heart" id="like-${media.id}"></i></p>
-        </div>
-      </li>`;
+        <li class="pictures-item">
+          <video src="FishEye_Photos/`+mediaArray[i].photographerId+`/`+mediaArray[i].video+`" alt="`+mediaArray[i].desc+`,closeup view" onclick="openLightbox();toSlide(`+[i+1]+`)"></video>
+          <div class="pictures-item-info">
+            <p>`+mediaArray[i].desc+`</p>
+            <p>`+mediaArray[i].price+` €</p>
+            <p><span id="like-counter-${mediaArray[i].id}">`+mediaArray[i].likes+`</span> <i class="fas fa-heart" aria-label="likes" id="like-${mediaArray[i].id}"></i></p>
+          </div>
+        </li>`;
+        lightboxGallery.innerHTML += `
+          <li class="lightbox-gallery-item" id="`+mediaArray[i].id+`">
+            <video src="FishEye_Photos/`+mediaArray[i].photographerId+`/`+mediaArray[i].video+`" alt="`+mediaArray[i].desc+`" controls></video>
+            <p class="pictures-item-info">`+mediaArray[i].desc+`</p>
+          </li>`;
       } else {
-      picGrid.innerHTML += `
-      <li class="pictures-item">
-        <img src="FishEye_Photos/`+media.photographerId+`/`+media.image+`" alt="" onclick="openLightbox()">
-        <div class="pictures-item-info">
-          <p>`+media.desc+`</p>
-          <p>`+media.price+` €</p>
-          <p><span id="like-counter-${media.id}">`+media.likes+`</span> <i class="fas fa-heart" id="like-${media.id}"></i></p>
-        </div>
-      </li>`
+        picGrid.innerHTML += `
+        <li class="pictures-item">
+          <img src="FishEye_Photos/`+mediaArray[i].photographerId+`/`+mediaArray[i].image+`" alt="`+mediaArray[i].desc+`,closeup view" onclick="openLightbox();toSlide(`+[i+1]+`)">
+          <div class="pictures-item-info">
+            <p>`+mediaArray[i].desc+`</p>
+            <p>`+mediaArray[i].price+` €</p>
+            <p><span id="like-counter-${mediaArray[i].id}">`+mediaArray[i].likes+`</span> <i class="fas fa-heart" aria-label="likes" id="like-${mediaArray[i].id}"></i></p>
+          </div>
+        </li>`
+        lightboxGallery.innerHTML += `
+          <li class="lightbox-gallery-item" id="`+mediaArray[i].id+`">
+            <img src="FishEye_Photos/`+mediaArray[i].photographerId+`/`+mediaArray[i].image+`" alt="`+mediaArray[i].desc+`">
+            <p class="pictures-item-info">`+mediaArray[i].desc+`</p>
+          </li>`
       };
+      
 
       // add likes when click and calculate total of likes
         
-      const mediaID = `like-${media.id}`;
-      const likeCounterID = `like-counter-${media.id}`;
+      const mediaID = `like-${mediaArray[i].id}`;
+      const likeCounterID = `like-counter-${mediaArray[i].id}`;
 
       picGrid.addEventListener("click", function(e) {
         if (e.target && e.target.id == mediaID) {
@@ -281,10 +190,10 @@ function appendDataPic(data) {
         }
       });
     }
-  };
 };
 
 // Re-sort pictures according to selection
+//!!! remet html à zéro, efface likes ajoutés !!!
 
 function sortPics(data) {
 
@@ -295,34 +204,50 @@ function sortPics(data) {
   function sortBy(selection,sortFunction) {
 
     selection.addEventListener("click", a => {
-      data.media.sort(sortFunction);
-      picGrid.innerHTML = ``;
-
-      for (media of data.media) {
+      const mediaArray = new Array
+      for (media of data.media){
         if (media.photographerId==id){
+          mediaArray.push(media);
+        }
+      }
 
-          if (media.video) {
+      mediaArray.sort(sortFunction);
+      picGrid.innerHTML = ``;
+      lightboxGallery.innerHTML =``;
+
+      for (i=0; i<mediaArray.length; i++){
+    
+          if (mediaArray[i].video) {
             picGrid.innerHTML += `
             <li class="pictures-item">
-              <video src="FishEye_Photos/`+media.photographerId+`/`+media.video+`" alt="" onclick="openLightbox()" controls></video>
+              <video src="FishEye_Photos/`+mediaArray[i].photographerId+`/`+mediaArray[i].video+`" alt="`+mediaArray[i].desc+`,closeup view" onclick="openLightbox();toSlide(`+[i+1]+`)"></video>
               <div class="pictures-item-info">
-                <p>`+media.desc+`</p>
-                <p>`+media.price+` €</p>
-                <p><span id="like-counter-${media.id}">`+media.likes+`</span> <i class="fas fa-heart" id="like-${media.id}"></i></p>
+                <p>`+mediaArray[i].desc+`</p>
+                <p>`+mediaArray[i].price+` €</p>
+                <p><span id="like-counter-${mediaArray[i].id}">`+mediaArray[i].likes+`</span> <i class="fas fa-heart" aria-label="likes" id="like-${mediaArray[i].id}"></i></p>
               </div>
             </li>`;
-            } else {
+            lightboxGallery.innerHTML += `
+            <li class="lightbox-gallery-item" id="`+mediaArray[i].id+`">
+              <video src="FishEye_Photos/`+mediaArray[i].photographerId+`/`+mediaArray[i].video+`" alt="`+mediaArray[i].desc+`" controls></video>
+              <p class="pictures-item-info">`+mediaArray[i].desc+`</p>
+            </li>`;
+          } else {
             picGrid.innerHTML += `
             <li class="pictures-item">
-              <img src="FishEye_Photos/`+media.photographerId+`/`+media.image+`" alt="" onclick="openLightbox()">
+              <img src="FishEye_Photos/`+mediaArray[i].photographerId+`/`+mediaArray[i].image+`" alt="`+mediaArray[i].desc+`,closeup view" onclick="openLightbox();toSlide(`+[i+1]+`)">
               <div class="pictures-item-info">
-                <p>`+media.desc+`</p>
-                <p>`+media.price+` €</p>
-                <p><span id="like-counter-${media.id}">`+media.likes+`</span> <i class="fas fa-heart" id="like-${media.id}"></i></p>
+                <p>`+mediaArray[i].desc+`</p>
+                <p>`+mediaArray[i].price+` €</p>
+                <p><span id="like-counter-${mediaArray[i].id}">`+mediaArray[i].likes+`</span> <i class="fas fa-heart" aria-label="likes" id="like-${mediaArray[i].id}"></i></p>
               </div>
             </li>`
-          }
-        }
+            lightboxGallery.innerHTML += `
+              <li class="lightbox-gallery-item" id="`+mediaArray[i].id+`">
+                <img src="FishEye_Photos/`+mediaArray[i].photographerId+`/`+mediaArray[i].image+`" alt="`+mediaArray[i].desc+`>
+                <p class="pictures-item-info">`+mediaArray[i].desc+`</p>
+              </li>`
+          };
       }
     })
   }
@@ -336,24 +261,55 @@ function sortPics(data) {
   };
 
   function byTitle(a,b){
-    a.desc.localeCompare(b.desc, 'fr', {ignorePunctuation: true});
-    /*if (a.title>b.title){
+    if (a.desc>b.desc){
       return 1;
-    } else if (a.title<b.title){
+    } else if (a.desc<b.desc){
       return -1;
     } else {
       return 0;
-    }*/
+    }
   }
 };
 
-// lightbox ; open, close, scroll with tab
+// lightbox ; open, close and show appropriate media
 
 function openLightbox(){
   lightbox.style.display = "block";
+
 };
 
 function closeLightbox(){
   lightbox.style.display = "none";
 }
+
+let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlide(slideIndex += n)
+};
+
+window.addEventListener("keydown", e=>{
+  KeyboardEvent: key='ArrowRight'
+})
+
+function toSlide(n){
+  showSlide(slideIndex = n)
+};
+
+function showSlide(n){
+  const mediasArray = document.getElementsByClassName("lightbox-gallery-item");
+
+  if (n<1){
+    slideIndex = mediasArray.length;
+  } else if (n>mediasArray.length){
+    slideIndex = 1;
+  };
+
+  for (i=0; i<mediasArray.length; i++){
+      mediasArray[i].style.display = "none";
+    };
+
+  mediasArray[slideIndex-1].style.display = "block";
+};
+
 

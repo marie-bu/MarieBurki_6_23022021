@@ -1,0 +1,26 @@
+.lightbox-bg {
+    background-color: $color-white;
+}
+
+.lightbox-content {
+    position: relative;
+    margin: 60px auto;
+    width: 85%;
+    @include mobile {
+        width: 100%;
+    }
+  
+}
+
+.lightbox-gallery {
+    &-item {
+        display: none;
+        width: inherit;
+        margin: 0px 85px;
+        img, video {
+            width: 100%;
+            height: 80vh;
+            object-fit: cover;
+        }
+    }
+}

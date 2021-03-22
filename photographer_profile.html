@@ -21,46 +21,49 @@
         </section>
 
         <section class="bg modal-bg">
-            <div class="modal-contact" role="dialog">
-                <button class="close" role="button" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
-                <h1 class="modal-heading" role="heading"></h1>
+            <div class="modal-contact" role="dialog" aria-labelledby="modal-heading">
+                <button class="closarie role dialoge" aria-label="Close contact form" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
+                <h1 id="modal-heading" role="heading"></h1>
                 <form action="" method="post" role="form" onsubmit="closeContactModal()">
-                    <label for="first">Prénom</label>
-                    <input type="text" name="first-name" id="first" role="textbox" required>
+                    <label for="First name">Prénom</label>
+                    <input type="text" name="first-name" id="first" role="textbox" aria-labelledby="First name" required>
 
-                    <label for="last">Nom</label>
-                    <input type="text" name="last-name" id="last" role="textbox" required>
+                    <label for="Last Name">Nom</label>
+                    <input type="text" name="last-name" id="last" role="textbox" aria-labelledby="Last name" required>
 
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" role="textbox" required>
+                    <label for="Email">Email</label>
+                    <input type="email" name="email" id="email" role="textbox" aria-labelledby="Email" required>
 
-                    <label for="message">Votre message</label>
-                    <input type="text" name="your-message" id="message" role="textbox" required>
+                    <label for="Your message">Votre message</label>
+                    <input type="text" name="your-message" id="message" role="textbox" aria-labelledby="Your message" required>
 
-                    <input type="submit" class="btn" value="Envoyer" role="button">
+                    <input type="submit" class="btn" value="Envoyer" role="button" aria-label="send">
                 </form>    
             </div>
         </section>
 
         <section class="pictures">
             <div class="pic-sort">
-                <div class="pic-sort-title">Trier par</div>
+                <div class="pic-sort-title" id="order-by">Trier par</div>
                 <div class="pic-sort-buttons">
-                    <span class="arrow unroll-select" onclick="unroll()"><i class="fas fa-chevron-down"></i></span>
-                    <span class="arrow rollup-select" onclick="rollup()"><i class="fas fa-chevron-up"></i></span>
-                    <button class="popularity">Popularité</button>
+                    <button class="arrow unroll-select" role="button" aria-labelledby="order-by" onclick="unroll()"><i class="fas fa-chevron-down"></i></button>
+                    <button class="arrow rollup-select" role="button" onclick="rollup()"><i class="fas fa-chevron-up"></i></button>
+                    <button class="category popularity">Popularité</button>
                     <div class="line-separate"></div>
-                    <button class="date">Date</button>
+                    <button class="category date">Date</button>
                     <div class="line-separate"></div>
-                    <button class="title">Titre</button>
+                    <button class="category title">Titre</button>
                 </div>
             </div>
 
             <ul class="pic-grid"></ul>
 
             <div class="bg lightbox-bg">
-                <div class="lightbox-content">
-                    <button class="close close-lighbox" role="button" onclick="closeLighbox()"><i class="fas fa-times"></i></button>
+                <div class="lightbox-content" role="dialog" aria-label="Image closeup view">
+                    <button class="close close-lightbox" aria-label="Close dialog" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+                    <button class="skip skip-left" aria-label="Previous image" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="skip skip-right" aria-label="Next image" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                    <ul class="lightbox-gallery"></ul>
                 </div>
             </div>
         </section>

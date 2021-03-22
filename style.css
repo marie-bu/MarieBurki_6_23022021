@@ -193,10 +193,29 @@ html {
   cursor: pointer;
 }
 .close-lightbox {
+  top: 5px;
   background-color: #FFFFFF;
 }
 .close-lightbox i {
   color: #901C1C;
+  font-size: 2.5rem;
+}
+
+.skip {
+  border: none;
+  position: absolute;
+  top: calc(50% - 20px);
+  cursor: pointer;
+}
+.skip-left {
+  left: 35px;
+}
+.skip-right {
+  right: 35px;
+}
+.skip i {
+  color: #901C1C;
+  font-size: 2.5rem;
 }
 
 .pic-sort {
@@ -221,11 +240,13 @@ html {
   top: 25px;
   right: 18px;
   color: #FFFFFF;
+  background-color: #901C1C;
+  border: none;
 }
 .pic-sort-buttons .rollup-select {
   display: none;
 }
-.pic-sort-buttons button {
+.pic-sort-buttons .category {
   text-align: left;
   padding-left: 20px;
   width: 170px;
@@ -237,10 +258,10 @@ html {
   font-weight: 700;
   border-radius: 5px;
 }
-.pic-sort-buttons button:hover {
+.pic-sort-buttons .category:hover {
   font-size: 1.2rem;
 }
-.pic-sort-buttons button:focus {
+.pic-sort-buttons .category:focus {
   color: #DB8876;
 }
 .pic-sort-buttons .line-separate {
@@ -545,6 +566,7 @@ html {
   height: 300px;
   border-radius: 5px;
   object-fit: cover;
+  cursor: pointer;
 }
 .pic-grid .pictures-item-info {
   display: flex;
@@ -563,6 +585,35 @@ html {
 }
 .pic-grid .pictures-item-info p:nth-child(2) {
   margin-right: 15px;
+}
+.pic-grid .pictures-item-info i {
+  cursor: pointer;
+}
+
+.lightbox-bg {
+  background-color: #FFFFFF;
+}
+
+.lightbox-content {
+  position: relative;
+  margin: 60px auto;
+  width: 85%;
+}
+@media all and (max-width: 899px) {
+  .lightbox-content {
+    width: 100%;
+  }
+}
+
+.lightbox-gallery-item {
+  display: none;
+  width: inherit;
+  margin: 0px 85px;
+}
+.lightbox-gallery-item img, .lightbox-gallery-item video {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
 }
 
 .appear-when-scroll {

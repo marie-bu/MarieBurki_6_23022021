@@ -18,11 +18,13 @@
             top: 25px;
             right: 18px;
             color: $color-white;
+            background-color: $color-primary;
+            border: none;
         }
         .rollup-select {
-                display: none;
+            display: none;
         }
-        button {
+        .category {
             text-align: left;
             padding-left: 20px;
             @include btn-static;
