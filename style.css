@@ -106,9 +106,6 @@ html {
   font-size: 1.125rem;
   font-weight: 700;
 }
-.pictures .pic-sort-title-selector {
-  color: #FFFFFF;
-}
 .pictures-item-info {
   color: #901C1C;
   font-size: 1.5rem;
@@ -223,7 +220,7 @@ html {
   flex-direction: row;
   padding-top: 15px;
 }
-.pic-sort-buttons {
+.pic-sort-listbox {
   position: absolute;
   left: 150px;
   z-index: 1;
@@ -235,7 +232,7 @@ html {
   border-radius: 5px;
   box-shadow: 0 3px 10px #525252;
 }
-.pic-sort-buttons .arrow {
+.pic-sort-listbox .arrow {
   position: absolute;
   top: 25px;
   right: 18px;
@@ -243,10 +240,10 @@ html {
   background-color: #901C1C;
   border: none;
 }
-.pic-sort-buttons .rollup-select {
+.pic-sort-listbox .rollup-select {
   display: none;
 }
-.pic-sort-buttons .category {
+.pic-sort-listbox .category {
   text-align: left;
   padding-left: 20px;
   width: 170px;
@@ -258,27 +255,27 @@ html {
   font-weight: 700;
   border-radius: 5px;
 }
-.pic-sort-buttons .category:hover {
+.pic-sort-listbox .category:hover {
   font-size: 1.2rem;
 }
-.pic-sort-buttons .category:focus {
+.pic-sort-listbox .category:focus {
   color: #DB8876;
 }
-.pic-sort-buttons .line-separate {
+.pic-sort-listbox .line-separate {
   align-self: center;
   height: 1px;
   width: 150px;
   background-color: #FFFFFF;
 }
-.pic-sort-buttons .date, .pic-sort-buttons .title, .pic-sort-buttons .line-separate {
+.pic-sort-listbox #date, .pic-sort-listbox #title, .pic-sort-listbox .line-separate {
   position: absolute;
   top: 0;
   z-index: -1;
 }
-.pic-sort-buttons .show {
-  position: relative;
-  top: auto;
-  z-index: 0;
+.pic-sort-listbox .show {
+  position: relative !important;
+  top: auto !important;
+  z-index: 0 !important;
 }
 @media all and (max-width: 899px) {
   .pic-sort {

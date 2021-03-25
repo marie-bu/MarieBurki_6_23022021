@@ -45,14 +45,14 @@
         <section class="pictures">
             <div class="pic-sort">
                 <div class="pic-sort-title" id="order-by">Trier par</div>
-                <div class="pic-sort-buttons">
-                    <button class="arrow unroll-select" role="button" aria-labelledby="order-by" onclick="unroll()"><i class="fas fa-chevron-down"></i></button>
+                <div class="pic-sort-listbox" aria-labelledby="order-by">
+                    <button class="arrow unroll-select" role="button" onclick="unroll()"><i class="fas fa-chevron-down"></i></button>
                     <button class="arrow rollup-select" role="button" onclick="rollup()"><i class="fas fa-chevron-up"></i></button>
-                    <button class="category popularity">Popularité</button>
+                    <button class="category" id="popularity" aria-selected="false" onfocus="aria(popularity)">Popularité</button>
                     <div class="line-separate"></div>
-                    <button class="category date">Date</button>
+                    <button class="category" id="date" aria-selected="false" onfocus="aria(date)">Date</button>
                     <div class="line-separate"></div>
-                    <button class="category title">Titre</button>
+                    <button class="category" id="title" aria-selected="false" onfocus="aria(Title)">Titre</button>
                 </div>
             </div>
 

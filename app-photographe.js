@@ -27,12 +27,13 @@ const modalContact = document.querySelector(".modal-bg");
 const totalLikes = document.querySelector("#total-likes");
 const priceBottom = document.querySelector("#price-bottom");
 
+const listbox = document.querySelector(".pic-sort-listbox");
 const unrollSelect = document.querySelector(".unroll-select");
 const rollupSelect = document.querySelector(".rollup-select");
 const lineSeparate = document.querySelectorAll(".line-separate");
-const popularity = document.querySelector(".popularity");
-const date = document.querySelector(".date");
-const title = document.querySelector(".title");
+const popularity = document.querySelector("#popularity");
+const date = document.querySelector("#date");
+const Title = document.querySelector("#title");
 
 const picGrid = document.querySelector(".pic-grid");
 const lightbox = document.querySelector(".lightbox-bg");
@@ -105,7 +106,7 @@ function closeContactModal(){
   console.log("message: "+document.getElementById("message").value)
 }
 
-// Unroll and rollup selection-menu
+// Unroll and rollup selection-menu, aria labels
 
 function unroll() {
   date.classList.add("show");
@@ -123,6 +124,11 @@ function rollup() {
   lineSeparate[1].classList.remove("show");
   rollupSelect.style.display = "none";
   unrollSelect.style.display = "inline-block";
+}
+
+function aria(el){
+  listbox.setAttribute("aria-activedescendant", el.id);
+  el.setAttribute("aria-selected", "true");
 }
 
 // insert data into grid pictures
