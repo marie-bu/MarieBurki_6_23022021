@@ -24,7 +24,7 @@ function appendDataIndex(data) {
 
     for(i=0; i<data.photographers.length; i++) {
       index.innerHTML += `<li class="index-profile">
-        <div role="link img" aria-label="`+data.photographers[i].name+`"><a href="photographer_profile.html?id=`+data.photographers[i].id+`">
+        <div role="link" aria-label="`+data.photographers[i].name+`"><a href="photographer_profile.html?id=`+data.photographers[i].id+`">
             <h2 class="name">`+data.photographers[i].name+`</h2>
             <img class="portrait" src="FishEye_Photos/Photographers_ID/`+data.photographers[i].portrait+`" alt="">
         </a></div>
@@ -44,12 +44,12 @@ function appendDataIndex(data) {
         `<div class="tag tag-label `+tag+`"><span class="sr-only">tag</span>#`+tag+`</div>`
       });
   }
-};
+}
 
 // "passer au contenu" appear when scroll
 
 window.onload = function() {
-  window.addEventListener('scroll', appearance=>{
+  window.addEventListener('scroll', ()=>{
     if(window.scrollY>250) {
       appearScroll.style.opacity = "1";
     } else {
@@ -61,6 +61,8 @@ window.onload = function() {
 // filter tags
 
 function filterSelection(c) {
+  const selected = document.activeElement;
+  selected.classList.add("stay-selected");
 
   const photographers = document.querySelectorAll(".index-profile");
 
@@ -68,10 +70,11 @@ function filterSelection(c) {
     photographer.classList.add("hide");
     const tags = photographer.querySelectorAll(".tag-label");
     Array.from(tags).forEach((tag) =>{
-      if (tag.className.indexOf(c)!=-1){
+      if (tag.className.indexOf(c) != -1){
         photographer.classList.remove("hide");
+        photographer.classList.add("stay-shown");
       }
     })
   });
-};
 
+}

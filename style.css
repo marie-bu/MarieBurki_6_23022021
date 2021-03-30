@@ -79,7 +79,7 @@ html {
   font-size: 1.5rem;
   font-weight: 500;
 }
-.profile-info-bottom i {
+.profile-info-bottom em {
   font-size: 1.35rem;
 }
 
@@ -96,9 +96,19 @@ html {
 .modal-contact label, .modal-contact input {
   font-size: 2.25rem;
 }
-.modal-contact i {
+@media all and (max-width: 899px) {
+  .modal-contact label, .modal-contact input {
+    font-size: 1.5rem;
+  }
+}
+.modal-contact em {
   color: #FFFFFF;
   font-size: 3rem;
+}
+@media all and (max-width: 899px) {
+  .modal-contact em {
+    font-size: 1.5rem;
+  }
 }
 
 .pictures .pic-sort-title {
@@ -181,6 +191,12 @@ html {
   cursor: pointer;
 }
 
+.stay-selected {
+  background-color: #DB8876;
+  color: #000000;
+  cursor: pointer;
+}
+
 .close {
   background-color: #DB8876;
   border: none;
@@ -189,13 +205,33 @@ html {
   right: 35px;
   cursor: pointer;
 }
+.close:hover > em, .close:focus > em {
+  color: #901C1C;
+}
+@media all and (max-width: 899px) {
+  .close {
+    top: 20px;
+    right: 20px;
+  }
+}
 .close-lightbox {
   top: 5px;
   background-color: #FFFFFF;
 }
-.close-lightbox i {
+.close-lightbox:hover > em, .close-lightbox:focus > em {
+  color: #DB8876;
+}
+.close-lightbox em {
   color: #901C1C;
   font-size: 2.5rem;
+}
+.close-lightbox em:hover, .close-lightbox em:focus {
+  color: #DB8876;
+}
+@media all and (max-width: 899px) {
+  .close-lightbox em {
+    font-size: 1rem;
+  }
 }
 
 .skip {
@@ -204,15 +240,33 @@ html {
   top: calc(50% - 20px);
   cursor: pointer;
 }
+.skip:hover > em, .skip:focus > em {
+  color: #DB8876;
+}
 .skip-left {
   left: 35px;
+}
+@media all and (max-width: 899px) {
+  .skip-left {
+    left: 25px;
+  }
 }
 .skip-right {
   right: 35px;
 }
-.skip i {
+@media all and (max-width: 899px) {
+  .skip-right {
+    right: 25px;
+  }
+}
+.skip em {
   color: #901C1C;
   font-size: 2.5rem;
+}
+@media all and (max-width: 899px) {
+  .skip em {
+    font-size: 1rem;
+  }
 }
 
 .pic-sort {
@@ -239,6 +293,9 @@ html {
   color: #FFFFFF;
   background-color: #901C1C;
   border: none;
+}
+.pic-sort-listbox .arrow:hover > em, .pic-sort-listbox .arrow:focus > em {
+  font-size: 1.3rem;
 }
 .pic-sort-listbox .rollup-select {
   display: none;
@@ -372,6 +429,9 @@ html {
 .index .hide {
   display: none;
 }
+.index .stay-shown {
+  display: block !important;
+}
 
 .profile {
   display: flex;
@@ -438,9 +498,10 @@ html {
 @media all and (max-width: 899px) {
   .profile-contact {
     position: fixed;
+    z-index: 1;
     bottom: 40px;
     left: 50%;
-    width: 170px;
+    width: fit-content;
     height: 35px;
     margin-left: -85px;
   }
@@ -495,11 +556,10 @@ html {
 }
 @media all and (max-width: 899px) {
   .modal-contact {
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-    margin-left: 0;
-    margin-top: 0;
+    height: fit-content;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 0;
     border-radius: 0;
     padding: 20px;
   }
@@ -523,12 +583,20 @@ html {
   font-weight: 700;
   border-radius: 5px;
 }
+@media all and (max-width: 899px) {
+  .modal-contact input:last-child {
+    position: relative;
+    left: 50%;
+    margin-left: -85px;
+    height: 35px;
+  }
+}
 .modal-contact input:last-child:hover, .modal-contact input:last-child:focus {
   background-color: #DB8876;
   color: #000000;
   cursor: pointer;
 }
-.modal-contact #message {
+.modal-contact #Your-message {
   height: 170px;
   margin-bottom: 25px;
   overflow: scroll;
@@ -583,7 +651,7 @@ html {
 .pic-grid .pictures-item-info p:nth-child(2) {
   margin-right: 15px;
 }
-.pic-grid .pictures-item-info i {
+.pic-grid .pictures-item-info em {
   cursor: pointer;
 }
 
@@ -598,19 +666,31 @@ html {
 }
 @media all and (max-width: 899px) {
   .lightbox-content {
+    top: 33vh;
     width: 100%;
+    margin: auto auto;
   }
 }
 
 .lightbox-gallery-item {
   display: none;
   width: inherit;
-  margin: 0px 85px;
+  margin: 0 85px;
+}
+@media all and (max-width: 899px) {
+  .lightbox-gallery-item {
+    margin: 0 45px;
+  }
 }
 .lightbox-gallery-item img, .lightbox-gallery-item video {
   width: 100%;
-  height: 80vh;
+  height: 900px;
   object-fit: cover;
+}
+@media all and (max-width: 899px) {
+  .lightbox-gallery-item img, .lightbox-gallery-item video {
+    height: 33vh;
+  }
 }
 
 .appear-when-scroll {

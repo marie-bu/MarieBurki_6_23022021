@@ -12,18 +12,37 @@
     }
 }
 
+.stay-selected {
+    @include btn-dynamic;
+}
+
 .close{
     background-color: $color-btn-dynamic;
     border: none;
     position: absolute;
     top: 35px; right: 35px;
+    &:hover > em, &:focus > em {
+        color: $color-primary;
+    }
+        @include mobile {
+            top: 20px; right: 20px;
+        }
     cursor: pointer;
     &-lightbox {
         top: 5px;
         background-color: $color-white;
-        i {
+        &:hover > em, &:focus > em {
+            color: $color-btn-dynamic;
+        }
+        em {
             color: $color-primary;
             font-size: 2.5rem;
+            &:hover, &:focus {
+                color: $color-btn-dynamic
+            }
+            @include mobile {
+                font-size: 1rem;
+            }
         }
     }
 }
@@ -33,14 +52,26 @@
     position: absolute;
     top : calc(50% - 20px);
     cursor: pointer;
+    &:hover > em, &:focus > em {
+        color: $color-btn-dynamic;
+    }
     &-left{
         left: 35px;
+        @include mobile {
+            left: 25px;
+        }
     }
     &-right{
         right: 35px;
+        @include mobile {
+            right: 25px;
+        }
     }
-    i {
+    em {
         color: $color-primary;
         font-size: 2.5rem;
+        @include mobile {
+            font-size: 1rem;
+        }
     }
 }

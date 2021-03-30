@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/4ff3d07870.js" crossorigin="anonymous"></script>
     <script src="app-photographe.js" defer></script>
-    <title></title>
+    <title>Fisheye - </title>
 </head>
 <body>
     <header>
-        <div class="banner banner-photographe" role="banner">
-            <a href="index.html" class="logo-link" role="img"><img src=".logo.png" alt="FishEye Home page" aria-label="logo Fisheye"></a>
+        <div class="banner banner-photographe">
+            <a href="index.html" class="logo-link" role="link"><img src=".logo.png" alt="FishEye Home page"></a>
         </div>
     </header>
 
@@ -22,20 +22,20 @@
 
         <section class="bg modal-bg">
             <div class="modal-contact" role="dialog" aria-labelledby="modal-heading">
-                <button class="closarie role dialoge" aria-label="Close contact form" onclick="closeContactModal()"><i class="fas fa-times"></i></button>
+                <button class="close" aria-label="fermer modale de contact" onclick="closeContactModal()"><em tabindex="-1" class="fas fa-times"></em></button>
                 <h1 id="modal-heading" role="heading"></h1>
                 <form action="" method="post" role="form" onsubmit="closeContactModal()">
-                    <label for="First name">Prénom</label>
-                    <input type="text" name="first-name" id="first" role="textbox" aria-labelledby="First name" required>
+                    <label for="First-name">Prénom</label>
+                    <input type="text" name="first-name" id="First-name" aria-labelledby="First-name" required>
 
-                    <label for="Last Name">Nom</label>
-                    <input type="text" name="last-name" id="last" role="textbox" aria-labelledby="Last name" required>
+                    <label for="Last-name">Nom</label>
+                    <input type="text" name="last-name" id="Last-name" aria-labelledby="Last-name" required>
 
                     <label for="Email">Email</label>
-                    <input type="email" name="email" id="email" role="textbox" aria-labelledby="Email" required>
+                    <input type="email" name="email" id="Email" aria-labelledby="Email" required>
 
-                    <label for="Your message">Votre message</label>
-                    <input type="text" name="your-message" id="message" role="textbox" aria-labelledby="Your message" required>
+                    <label for="Your-message">Votre message</label>
+                    <input type="text" name="your-message" id="Your-message" aria-labelledby="Your-message" required>
 
                     <input type="submit" class="btn" value="Envoyer" role="button" aria-label="send">
                 </form>    
@@ -46,13 +46,13 @@
             <div class="pic-sort">
                 <div class="pic-sort-title" id="order-by">Trier par</div>
                 <div class="pic-sort-listbox" aria-labelledby="order-by">
-                    <button class="arrow unroll-select" role="button" onclick="unroll()"><i class="fas fa-chevron-down"></i></button>
-                    <button class="arrow rollup-select" role="button" onclick="rollup()"><i class="fas fa-chevron-up"></i></button>
-                    <button class="category" id="popularity" aria-selected="false" onfocus="aria(popularity)">Popularité</button>
+                    <button class="arrow unroll-select" onclick="unroll()" aria-haspopup="listbox"><em tabindex="-1" class="fas fa-chevron-down"></em></button>
+                    <button class="arrow rollup-select" onclick="rollup()" aria-label="fermer listbox"><em tabindex="-1" class="fas fa-chevron-up"></em></button>
+                    <button class="category" id="popularity" aria-labelledby="popularity" aria-selected="false" onfocus="aria(popularity)"><span>Popularité</span></button>
                     <div class="line-separate"></div>
-                    <button class="category" id="date" aria-selected="false" onfocus="aria(date)">Date</button>
+                    <button class="category" id="date" aria-labelledby="date" aria-selected="false" onfocus="aria(date)">Date</button>
                     <div class="line-separate"></div>
-                    <button class="category" id="title" aria-selected="false" onfocus="aria(Title)">Titre</button>
+                    <button class="category" id="title" aria-labelledby="title" aria-selected="false" onfocus="aria(Title)">Titre</button>
                 </div>
             </div>
 
@@ -60,16 +60,16 @@
 
             <div class="bg lightbox-bg">
                 <div class="lightbox-content" role="dialog" aria-label="Image closeup view">
-                    <button class="close close-lightbox" aria-label="Close dialog" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
-                    <button class="skip skip-left" aria-label="Previous image" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-                    <button class="skip skip-right" aria-label="Next image" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                    <button class="close close-lightbox" aria-label="Close dialog" onclick="closeLightbox()"><em tabindex="-1" class="fas fa-times"></em></button>
+                    <button class="skip skip-left" aria-label="Previous image" onclick="changeSlide(-1)"><em tabindex="-1" class="fas fa-chevron-left"></em></button>
+                    <button class="skip skip-right" aria-label="Next image" onclick="changeSlide(1)"><em tabindex="-1" class="fas fa-chevron-right"></em></button>
                     <ul class="lightbox-gallery"></ul>
                 </div>
             </div>
         </section>
 
         <div class="profile-info-bottom" role="text">
-            <p><span id="total-likes"></span> <i class="fas fa-heart"></i> </p>
+            <p><span id="total-likes"></span> <em class="fas fa-heart"></em> </p>
             <p><span id="price-bottom"></span>€/jour</p>
         </div>
     </main>

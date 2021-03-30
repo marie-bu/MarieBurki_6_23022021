@@ -20,6 +20,9 @@
             color: $color-white;
             background-color: $color-primary;
             border: none;
+            &:hover > em, &:focus > em {
+                font-size: 1.3rem;
+            }
         }
         .rollup-select {
             display: none;

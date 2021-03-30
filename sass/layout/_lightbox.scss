@@ -7,7 +7,9 @@
     margin: 60px auto;
     width: 85%;
     @include mobile {
+        top: 33vh;
         width: 100%;
+        margin: auto auto;
     }
   
 }
@@ -16,11 +18,17 @@
     &-item {
         display: none;
         width: inherit;
-        margin: 0px 85px;
+        margin: 0 85px;
+        @include mobile {
+            margin: 0 45px;
+        }
         img, video {
             width: 100%;
-            height: 80vh;
+            height: 900px;
             object-fit: cover;
+            @include mobile {
+                height: 33vh;
+            }
         }
     }
 }
