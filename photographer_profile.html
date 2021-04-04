@@ -18,13 +18,18 @@
 
     <main>
         <section class="profile">
+            <div class="profile-info"></div>
+            <div class="profile-contact">
+                <button class="btn btn-contact" role="button" aria-label="Contactez-moi">Contactez-moi</button>
+            </div>
+            <div class="profile-portrait"></div>
         </section>
 
         <section class="bg modal-bg">
             <div class="modal-contact" role="dialog" aria-labelledby="modal-heading">
-                <button class="close" aria-label="fermer modale de contact" onclick="closeContactModal()"><em tabindex="-1" class="fas fa-times"></em></button>
+                <button class="close close-contact" aria-label="fermer modale de contact"><em tabindex="-1" class="fas fa-times"></em></button>
                 <h1 id="modal-heading" role="heading"></h1>
-                <form action="" method="post" role="form" onsubmit="closeContactModal()">
+                <form action="" method="post" role="form">
                     <label for="First-name">Prénom</label>
                     <input type="text" name="first-name" id="First-name" aria-labelledby="First-name" required>
 
@@ -46,8 +51,8 @@
             <div class="pic-sort">
                 <div class="pic-sort-title" id="order-by">Trier par</div>
                 <div class="pic-sort-listbox" aria-labelledby="order-by">
-                    <button class="arrow unroll-select" onclick="unroll()" aria-haspopup="listbox"><em tabindex="-1" class="fas fa-chevron-down"></em></button>
-                    <button class="arrow rollup-select" onclick="rollup()" aria-label="fermer listbox"><em tabindex="-1" class="fas fa-chevron-up"></em></button>
+                    <button class="arrow unroll-select" aria-haspopup="listbox"><em tabindex="-1" class="fas fa-chevron-down"></em></button>
+                    <button class="arrow rollup-select" aria-label="fermer listbox"><em tabindex="-1" class="fas fa-chevron-up"></em></button>
                     <button class="category" id="popularity" aria-labelledby="popularity" aria-selected="false" onfocus="aria(popularity)"><span>Popularité</span></button>
                     <div class="line-separate"></div>
                     <button class="category" id="date" aria-labelledby="date" aria-selected="false" onfocus="aria(date)">Date</button>
@@ -60,7 +65,7 @@
 
             <div class="bg lightbox-bg">
                 <div class="lightbox-content" role="dialog" aria-label="Image closeup view">
-                    <button class="close close-lightbox" aria-label="Close dialog" onclick="closeLightbox()"><em tabindex="-1" class="fas fa-times"></em></button>
+                    <button class="close close-lightbox" aria-label="Close dialog"><em tabindex="-1" class="fas fa-times"></em></button>
                     <button class="skip skip-left" aria-label="Previous image" onclick="changeSlide(-1)"><em tabindex="-1" class="fas fa-chevron-left"></em></button>
                     <button class="skip skip-right" aria-label="Next image" onclick="changeSlide(1)"><em tabindex="-1" class="fas fa-chevron-right"></em></button>
                     <ul class="lightbox-gallery"></ul>

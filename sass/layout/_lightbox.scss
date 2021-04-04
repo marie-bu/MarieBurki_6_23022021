@@ -5,11 +5,11 @@
 .lightbox-content {
     position: relative;
     margin: 60px auto;
-    width: 85%;
+    width: 100%;
+    max-width: 1250px;
     @include mobile {
         top: 33vh;
-        width: 100%;
-        margin: auto auto;
+        margin: 0 auto;
     }
   
 }
@@ -17,8 +17,9 @@
 .lightbox-gallery {
     &-item {
         display: none;
-        width: inherit;
-        margin: 0 85px;
+        width: auto;
+        max-width: 1050px;
+        margin: auto;
         @include mobile {
             margin: 0 45px;
         }

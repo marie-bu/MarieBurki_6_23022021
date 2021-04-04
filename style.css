@@ -275,8 +275,8 @@ html {
   padding-top: 15px;
 }
 .pic-sort-listbox {
-  position: absolute;
-  left: 150px;
+  position: relative;
+  left: 15px;
   z-index: 1;
   margin-left: 15px;
   margin-top: -18px;
@@ -331,7 +331,7 @@ html {
 }
 .pic-sort-listbox .show {
   position: relative !important;
-  top: auto !important;
+  top: 2px !important;
   z-index: 0 !important;
 }
 @media all and (max-width: 899px) {
@@ -428,9 +428,6 @@ html {
 }
 .index .hide {
   display: none;
-}
-.index .stay-shown {
-  display: block !important;
 }
 
 .profile {
@@ -662,20 +659,21 @@ html {
 .lightbox-content {
   position: relative;
   margin: 60px auto;
-  width: 85%;
+  width: 100%;
+  max-width: 1250px;
 }
 @media all and (max-width: 899px) {
   .lightbox-content {
     top: 33vh;
-    width: 100%;
-    margin: auto auto;
+    margin: 0 auto;
   }
 }
 
 .lightbox-gallery-item {
   display: none;
-  width: inherit;
-  margin: 0 85px;
+  width: auto;
+  max-width: 1050px;
+  margin: auto;
 }
 @media all and (max-width: 899px) {
   .lightbox-gallery-item {

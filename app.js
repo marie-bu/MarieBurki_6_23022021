@@ -22,7 +22,7 @@ const appearScroll = document.querySelector(".appear-when-scroll");
 
 function appendDataIndex(data) {
 
-    for(i=0; i<data.photographers.length; i++) {
+    for(let i=0; i<data.photographers.length; i++) {
       index.innerHTML += `<li class="index-profile">
         <div role="link" aria-label="`+data.photographers[i].name+`"><a href="photographer_profile.html?id=`+data.photographers[i].id+`">
             <h2 class="name">`+data.photographers[i].name+`</h2>
@@ -61,9 +61,6 @@ window.onload = function() {
 // filter tags
 
 function filterSelection(c) {
-  const selected = document.activeElement;
-  selected.classList.add("stay-selected");
-
   const photographers = document.querySelectorAll(".index-profile");
 
   photographers.forEach((photographer) =>{
@@ -72,7 +69,6 @@ function filterSelection(c) {
     Array.from(tags).forEach((tag) =>{
       if (tag.className.indexOf(c) != -1){
         photographer.classList.remove("hide");
-        photographer.classList.add("stay-shown");
       }
     })
   });
