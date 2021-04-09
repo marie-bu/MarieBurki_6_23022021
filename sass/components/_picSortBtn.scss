@@ -3,8 +3,8 @@
     flex-direction: row;
     padding-top: 15px;
     &-listbox {
-        position: relative;
-        left: 15px;
+        position: absolute;
+        left: 150px;
         z-index: 1;
         margin-left: 15px;
         margin-top: -18px;
@@ -52,7 +52,7 @@
         .show {
             position: relative !important;
             top: 2px !important;
-            z-index: 0 !important;
+            z-index: 1 !important;
         }
 
     }

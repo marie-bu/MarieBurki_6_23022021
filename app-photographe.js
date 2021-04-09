@@ -49,7 +49,7 @@ function htmlPicGrid (object, index, key) {
     <div class="pictures-item-info">
       <p>`+object[index].desc+`</p>
       <p>`+object[index].price+` €</p>
-      <p><span id="like-counter-${object[index].id}">`+object[index].likes+`</span> <em class="fas fa-heart" aria-label="likes" id="like-${object[index].id}"></em></p>
+      <p><span id="like-counter-${object[index].id}">`+object[index].likes+`</span> <em class="fas fa-heart" aria-label="likes" id="like-${object[index].id}"></em><span class="sr-only">likes</span></p>
     </div>
   </li>`
 

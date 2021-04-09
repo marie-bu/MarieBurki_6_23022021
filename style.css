@@ -144,6 +144,7 @@ ul {
 }
 
 html {
+  position: relative;
   max-width: 1415px;
   margin: auto;
   padding: 0 50px;
@@ -275,8 +276,8 @@ html {
   padding-top: 15px;
 }
 .pic-sort-listbox {
-  position: relative;
-  left: 15px;
+  position: absolute;
+  left: 150px;
   z-index: 1;
   margin-left: 15px;
   margin-top: -18px;
@@ -332,7 +333,7 @@ html {
 .pic-sort-listbox .show {
   position: relative !important;
   top: 2px !important;
-  z-index: 0 !important;
+  z-index: 1 !important;
 }
 @media all and (max-width: 899px) {
   .pic-sort {
