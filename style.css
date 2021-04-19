@@ -344,6 +344,7 @@ html {
 .banner {
   display: flex;
   justify-content: space-between;
+  margin-top: 50px;
 }
 @media all and (max-width: 899px) {
   .banner {
@@ -571,6 +572,9 @@ html {
   border-radius: 5px;
   border: none;
 }
+.modal-contact input::placeholder {
+  color: white;
+}
 .modal-contact input:last-child {
   width: 170px;
   height: 69px;
@@ -695,12 +699,11 @@ html {
 .appear-when-scroll {
   position: sticky;
   top: 0;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   height: 45px;
   background-color: #FFFFFF;
-  opacity: 0;
   transition: 200ms;
 }
 .appear-when-scroll-link {

@@ -24,14 +24,14 @@ function appendDataIndex(data) {
 
     for(let i=0; i<data.photographers.length; i++) {
       index.innerHTML += `<li class="index-profile">
-        <div role="link" aria-label="`+data.photographers[i].name+`"><a href="photographer_profile.html?id=`+data.photographers[i].id+`">
-            <h2 class="name">`+data.photographers[i].name+`</h2>
+        <div aria-label="`+data.photographers[i].name+`"><a href="photographer_profile.html?id=`+data.photographers[i].id+`">
+            <h2 class="name" tabindex="0">`+data.photographers[i].name+`</h2>
             <img class="portrait" src="FishEye_Photos/Photographers_ID/`+data.photographers[i].portrait+`" alt="">
         </a></div>
         <div role="text">
-            <p class="location">`+data.photographers[i].city+`, `+data.photographers[i].country+`</p>
-            <p class="tagline">`+data.photographers[i].tagline+`</p>
-            <p class="price">`+data.photographers[i].price+`€/jour</p>
+            <p class="location" tabindex="0">`+data.photographers[i].city+`, `+data.photographers[i].country+`</p>
+            <p class="tagline" tabindex="0">`+data.photographers[i].tagline+`</p>
+            <p class="price" tabindex="0">`+data.photographers[i].price+`€/jour</p>
         </div>
         <div class="index-profile-tags">
         </div>
@@ -51,9 +51,9 @@ function appendDataIndex(data) {
 window.onload = function() {
   window.addEventListener('scroll', ()=>{
     if(window.scrollY>250) {
-      appearScroll.style.opacity = "1";
+      appearScroll.style.display = "flex";
     } else {
-      appearScroll.style.opacity = "0";
+      appearScroll.style.display = "none";
     }
   })
 };

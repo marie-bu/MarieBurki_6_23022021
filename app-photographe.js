@@ -48,8 +48,8 @@ function htmlPicGrid (object, index, key) {
     <div class="pictures-item-media"></div>
     <div class="pictures-item-info">
       <p>`+object[index].desc+`</p>
-      <p>`+object[index].price+` €</p>
-      <p><span id="like-counter-${object[index].id}">`+object[index].likes+`</span> <em class="fas fa-heart" aria-label="likes" id="like-${object[index].id}"></em><span class="sr-only">likes</span></p>
+      <p tabindex="0">`+object[index].price+` €</p>
+      <p tabindex="0"><span id="like-counter-${object[index].id}">`+object[index].likes+`</span> <em class="fas fa-heart" aria-label="likes" id="like-${object[index].id}"></em><span class="sr-only">likes</span></p>
     </div>
   </li>`
 
@@ -57,11 +57,11 @@ function htmlPicGrid (object, index, key) {
 
   if (key=="video") {
     DivMedia[index].innerHTML += `
-    <video src="FishEye_Photos/`+object[index].photographerId+`/`+object[index][key]+`" alt="`+object[index].desc+`" role="link" aria-label="ouvre lightbox, aggrandit image" tabindex="0" onkeydown="lightboxKeyboard(event, `+[index+1]+`)" onclick="openLightbox();toSlide(`+[index+1]+`)"></video>`
+    <video src="FishEye_Photos/`+object[index].photographerId+`/`+object[index][key]+`" alt="`+object[index].desc+`" role="link" aria-label="ouvre lightbox, aggrandit photo `+object[index].desc+`" tabindex="0" onkeydown="openLbKeyboard(event, `+[index+1]+`)" onclick="openLightbox();toSlide(`+[index+1]+`)"></video>`
   }
   if (key=="image") {
     DivMedia[index].innerHTML += `
-    <img src="FishEye_Photos/`+object[index].photographerId+`/`+object[index][key]+`" alt="`+object[index].desc+`" role="link" aria-label="ouvre lightbox, aggrandit image" tabindex="0" onkeydown="lightboxKeyboard(event, `+[index+1]+`)" onclick="openLightbox();toSlide(`+[index+1]+`)">`
+    <img src="FishEye_Photos/`+object[index].photographerId+`/`+object[index][key]+`" alt="`+object[index].desc+`" role="link" aria-label="ouvre lightbox, aggrandit photo `+object[index].desc+`" tabindex="0" onkeydown="openLbKeyboard(event, `+[index+1]+`)" onclick="openLightbox();toSlide(`+[index+1]+`)">`
   }
 }
 
@@ -111,9 +111,9 @@ function appendDataProfile(data){
       titlePage.innerHTML += data.photographers[i].name;
 
       profileInfo.innerHTML +=
-        `<h1 class="profile-info-name" role="heading">`+data.photographers[i].name+`</h1>
-          <p class="profile-info-loc" role="text">`+data.photographers[i].city+`, `+data.photographers[i].country+`</p>
-          <p class="profile-info-tagline" role="text">`+data.photographers[i].tagline+`</p>
+        `<h1 class="profile-info-name" role="heading" tabindex="0">`+data.photographers[i].name+`</h1>
+          <p class="profile-info-loc" role="text" tabindex="0">`+data.photographers[i].city+`, `+data.photographers[i].country+`</p>
+          <p class="profile-info-tagline" role="text" tabindex="0">`+data.photographers[i].tagline+`</p>
           <div class="profile-info-tags"></div>`
 
       profilePortrait.innerHTML +=
@@ -138,6 +138,8 @@ function appendDataProfile(data){
 
 contactBtn.addEventListener("click", ()=>{
   modalContact.style.display = "block";
+  modalContact.setAttribute('tabindex', '0');
+  modalContact.focus();
 })
 closeContactBtn.addEventListener("click", ()=>{
   modalContact.style.display = "none";
@@ -256,25 +258,20 @@ function sortPics(data) {
 
 function openLightbox(){
   lightbox.style.display = "block";
+  lightbox.setAttribute("tabindex", "0");
+  lightbox.focus()
 }
 closeLightboxBtn.addEventListener("click", ()=>{
   lightbox.style.display = "none";
 })
-
-let slideIndex = 1;
-
-function lightboxKeyboard(event, n){
+function openLbKeyboard(event, n){
   if(event.key=="Enter"){
     openLightbox()
     toSlide(n)
   }
-  if(event.key=="ArrowRight") {
-    changeSlide(1);
-  }
-  if(event.key=="ArrowLeft") {
-    changeSlide(-1);
-  }
 }
+
+let slideIndex = 1;
 
 function changeSlide(n) {
   showSlide(slideIndex += n)
@@ -282,18 +279,27 @@ function changeSlide(n) {
 function toSlide(n){
   showSlide(slideIndex = n)
 }
+
 function showSlide(n){
   const mediasArray = document.getElementsByClassName("lightbox-gallery-item");
-
   if (n<1){
     slideIndex = mediasArray.length;
   } else if (n>mediasArray.length){
     slideIndex = 1;
   }
-
   for (let i=0; i<mediasArray.length; i++){
       mediasArray[i].style.display = "none";
     }
-
   mediasArray[slideIndex-1].style.display = "block";
 }
+
+window.addEventListener("keydown", (event)=>{
+  if (lightbox.style.display == "block"){
+    if(event.key=="ArrowRight") {
+      changeSlide(1);
+    }
+    if(event.key=="ArrowLeft") {
+      changeSlide(-1);
+    }
+  }
+});

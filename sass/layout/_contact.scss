@@ -34,6 +34,9 @@
         height: 70px;
         border-radius: 5px;
         border: none;
+        &::placeholder {
+            color:rgba($color:white, $alpha: 1.0);
+        }
         &:last-child {
             @include btn-static;
             @include mobile {

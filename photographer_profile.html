@@ -31,44 +31,44 @@
                 <h1 id="modal-heading" role="heading"></h1>
                 <form action="" method="post" role="form">
                     <label for="First-name">Prénom</label>
-                    <input type="text" name="first-name" id="First-name" aria-labelledby="First-name" required>
+                    <input type="text" name="first-name" id="First-name" placeholder="entrez votre prénom" aria-labelledby="First-name" required>
 
                     <label for="Last-name">Nom</label>
-                    <input type="text" name="last-name" id="Last-name" aria-labelledby="Last-name" required>
+                    <input type="text" name="last-name" id="Last-name" placeholder="entrez votre nom" aria-labelledby="Last-name" required>
 
                     <label for="Email">Email</label>
-                    <input type="email" name="email" id="Email" aria-labelledby="Email" required>
+                    <input type="email" name="email" id="Email" placeholder="entrez votre email" aria-labelledby="Email" required>
 
                     <label for="Your-message">Votre message</label>
-                    <input type="text" name="your-message" id="Your-message" aria-labelledby="Your-message" required>
+                    <input type="text" name="your-message" id="Your-message" placeholder="entrez votre message" aria-labelledby="Your-message" required>
 
-                    <input type="submit" class="btn" value="Envoyer" role="button" aria-label="send">
+                    <input type="submit" class="btn" value="Envoyer" role="button" aria-label="envoi">
                 </form>    
             </div>
         </section>
 
         <section class="pictures">
             <div class="pic-sort">
-                <div class="pic-sort-title" id="order-by">Trier par</div>
-                <div class="pic-sort-listbox" aria-labelledby="order-by">
-                    <button class="arrow unroll-select" aria-haspopup="listbox"><em tabindex="-1" class="fas fa-chevron-down"></em></button>
+                <div class="pic-sort-title" id="order-by"><span class="sr-only">Gallerie d'images, </span>Trier par</div>
+                <div class="pic-sort-listbox" aria-labelledby="order-by" tabindex="0">
+                    <button class="arrow unroll-select" aria-haspopup="listbox" aria-label="ouvrir listbox"><em tabindex="-1" class="fas fa-chevron-down"></em></button>
                     <button class="arrow rollup-select" aria-label="fermer listbox"><em tabindex="-1" class="fas fa-chevron-up"></em></button>
-                    <button class="category" id="popularity" aria-labelledby="popularity" aria-selected="false" onfocus="aria(popularity)"><span>Popularité</span></button>
+                    <button class="category" id="popularity" aria-labelledby="popularity" aria-selected="false" onclick="aria(popularity)"><span>Popularité</span></button>
                     <div class="line-separate"></div>
-                    <button class="category" id="date" aria-labelledby="date" aria-selected="false" onfocus="aria(date)">Date</button>
+                    <button class="category" id="date" aria-labelledby="date" aria-selected="false" onclick="aria(date)">Date</button>
                     <div class="line-separate"></div>
-                    <button class="category" id="title" aria-labelledby="title" aria-selected="false" onfocus="aria(Title)">Titre</button>
+                    <button class="category" id="title" aria-labelledby="title" aria-selected="false" onclick="aria(Title)">Titre</button>
                 </div>
             </div>
 
             <ul class="pic-grid"></ul>
 
             <div class="bg lightbox-bg">
-                <div class="lightbox-content" role="dialog" aria-label="Image closeup view">
-                    <button class="close close-lightbox" aria-label="Close dialog"><em tabindex="-1" class="fas fa-times"></em></button>
-                    <button class="skip skip-left" aria-label="Previous image" onclick="changeSlide(-1)"><em tabindex="-1" class="fas fa-chevron-left"></em></button>
-                    <button class="skip skip-right" aria-label="Next image" onclick="changeSlide(1)"><em tabindex="-1" class="fas fa-chevron-right"></em></button>
-                    <ul class="lightbox-gallery"></ul>
+                <div class="lightbox-content" role="dialog" aria-label="Image agrandie">
+                    <button class="close close-lightbox" aria-label="Fermer la lightbox"><em tabindex="-1" class="fas fa-times"></em></button>
+                    <button class="skip skip-left" aria-label="media précédent" onclick="changeSlide(-1)"><em tabindex="-1" class="fas fa-chevron-left"></em></button>
+                    <button class="skip skip-right" aria-label="média suivant" onclick="changeSlide(1)"><em tabindex="-1" class="fas fa-chevron-right"></em></button>
+                    <ul class="lightbox-gallery" tabindex="0"></ul>
                 </div>
             </div>
         </section>
@@ -76,7 +76,7 @@
         <div class="profile-info-bottom" role="text">
             <p><span id="total-likes"></span><em class="fas fa-heart"></em><span class="sr-only">likes</span></p>
             <p><span id="price-bottom"></span>€/jour</p>
-        </div>
+        </div>   
     </main>
     
 </body>
